@@ -1,0 +1,10 @@
+{
+	"name": "MushroomStew",
+	"version": "1.0.0.0",
+	"description": "Literally Magic",
+	"main": "bot.js",
+	"author": "Silversunset",
+	"dependencies": {
+		"axios": "^0.18.0"
+	}
+}

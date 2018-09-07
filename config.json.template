@@ -1,0 +1,6 @@
+{
+	"token": "SEKRIT TOKEN",
+	"prefix": "?",
+    "owner": "OWNER ID",
+    "staff": ["Head Admin", "Tech Admin", "PAdmin", "CAdmin", "Moderator", "Past Staff", "Justice"]
+}
