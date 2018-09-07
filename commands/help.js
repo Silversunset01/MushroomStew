@@ -1,5 +1,4 @@
 const fs = require("fs");
-
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var req = args[0];
     
@@ -26,7 +25,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
         var embed = new Discord.RichEmbed()
             .setColor(0xE8DFEA)
             .setTimestamp()
-            .setFooter("?help | " + msg.author.tag)
+            .setFooter(config.prefix + "help | " + msg.author.tag)
             .setDescription(`For a list of commands type **?help [category]**. \nThe categories available are: \n${result}`);
             msg.channel.send({embed}).catch(console.error);
     } else {
@@ -39,7 +38,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
                 .setColor(0xE8DFEA)
                 .setTitle(`Command Category: **${req.toUpperCase()}**`)
                 .setTimestamp()
-                .setFooter("?help | " + msg.author.tag)
+                .setFooter(config.prefix + "help | " + msg.author.tag)
                 for (y in commands) {
                     var cmd = require("../commands/" + commands[y] + ".js");
                     if(cmd.help.category.toLowerCase() === req.toLowerCase()) {

@@ -8,7 +8,7 @@ exports.run = (client, msg, args, content, Discord) => {
         //console.log(`${role} ----> ${user}`);
 
         if (!role) {
-            msg.channel.send("I am sorry but that role does not exist. Please do **!rolelist** for a list of available roles.").catch(console.error); return;
+            msg.channel.send("I am sorry but that role does not exist. Please do **" + config.prefix + "rolelist** for a list of available roles.").catch(console.error); return;
         } else {
             if (!hasRole){
                     user.addRole(role).catch(console.error); 

@@ -1,5 +1,5 @@
 const Discord = require("discord.js");  //required for embeds apparently
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, config) => {
     var roles = msg.guild.roles.map(r=>r.name).sort();
     var rmroles = ["Head Admin", "CAdmin", "PAdmin", "Tech Admin", "Moderator", "Nerdbot", "Past Staff", "Nerds", "@everyone"];
     for (i in rmroles) {
@@ -13,7 +13,7 @@ exports.run = (client, msg, args, content) => {
     var embed = new Discord.RichEmbed()
         .setTitle("**Role Info**")
         .setColor(0xE8DFEA)
-        .addField("The roles you are currently allowed to choose from are:", result + "\n\n**To add or remove a role type** ?role <name>\n**To list all users in a role type** ?roleinfo <name>\n*make sure to use the case-sensitive item from above!*");
+        .addField("The roles you are currently allowed to choose from are:", result + "\n\n**To add or remove a role type** " + config.prefix + "role <name>\n**To list all users in a role type** " + config.prefix + "roleinfo <name>\n*make sure to use the case-sensitive item from above!*");
     msg.channel.send({embed}).catch(console.error);
     
 };

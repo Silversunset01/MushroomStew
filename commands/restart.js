@@ -1,4 +1,3 @@
-const config = require("../config.json");
 exports.run = (client, msg, args, content) => {
     if (!msg.member.roles.find("name","Head Admin")) {
         msg.channel.send("You do not have permission to run this command").catch(console.error);

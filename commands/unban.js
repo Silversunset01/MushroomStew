@@ -21,8 +21,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 **When:** ${unbanTime}
             `);
         msg.guild.channels.find("name","ban-logs").send({embed}).catch(console.error);
-        
-        //msg.guild.channels.find("name","ban-logs").send(`⚖ Someone has been unbanned ⚖\n**User Id:** ${unbanUser}\n**Unbanned By:** ${msg.author.tag}\n**Reason:** ${unbanReason}\n**When:** ${unbanTime}`).catch(console.error);
 
         //ban mentioned user
         msg.guild.unban(unbanUser)

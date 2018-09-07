@@ -3,7 +3,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     if (!msg.member.roles.find("name","Head Admin")) {
         msg.channel.send("You do not have permission for this command").catch(console.error);
     } else  if (!args[0]){
-        msg.channel.send("The sytax for this command is\n `!botgame [playing | listening | watching] [text]`")
+        msg.channel.send("The sytax for this command is\n " + config.prefix + "botgame [playing | listening | watching] [text]`")
     } else {
         var acType = args[0].toLowerCase();
         var activity = args.splice(1, args.length - 1).join(" ");

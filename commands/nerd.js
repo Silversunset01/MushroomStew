@@ -14,7 +14,7 @@ Mumble Download: http://mumble.sourceforge.net/
 Mumble Connection: server: mumble.nerd.nu | port: 6162 (voice chat)
         `)
         .setTimestamp()
-        .setFooter("!nerdnu | " + msg.author.tag);					
+        .setFooter(config.prefix + "nerdnu | " + msg.author.tag);					
     msg.channel.send({embed}).catch(console.error);
     
 };

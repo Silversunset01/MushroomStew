@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-
 exports.run = (client, msg) => {
     //store bot's game type
     var game = client.user.presence.game.type;
@@ -42,7 +41,7 @@ __Technical Information__
 **Node.js Version:** ${process.versions.node}
 **Discord.js Version:** ${Discord.version}
        `)
-        .setFooter("?botinfo | " + msg.author.tag)
+        .setFooter(config.prefix + "botinfo | " + msg.author.tag)
         .setTimestamp();
     msg.channel.send({embed}).catch(console.error);
 };

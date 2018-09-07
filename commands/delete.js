@@ -1,4 +1,3 @@
-const config = require("../config.json");
 exports.run = (client, msg, args) => {
     if (msg.member.roles.find("name","Head Admin") || msg.author.id == config.owner) {
         var amt = args[0];

@@ -33,7 +33,7 @@ __Misc__
 **AFK info:** Move to ${msg.guild.afkChannel} after ${msg.guild.afkTimeout / 60} minutes
 **Content Filter:** ${cFilter}
        `)
-        .setFooter("?serverinfo | " + msg.author.tag)
+        .setFooter(config.prefix + "serverinfo | " + msg.author.tag)
         .setThumbnail(msg.guild.iconURL)
         .setTimestamp();
     msg.channel.send({embed}).catch(console.error);

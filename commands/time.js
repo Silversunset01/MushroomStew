@@ -10,10 +10,10 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     var embed = new Discord.RichEmbed()
             .setColor(0xE8DFEA)
             .setTimestamp()
-            .setFooter("?time zone | " + msg.author.tag);
+            .setFooter(config.prefix + "time zone | " + msg.author.tag);
                 
     if (!type) {
-        var tz = "Please specify a command.\n\n**?time to [time]** - to display the time until a specified date. Your time should be in the following format:\n`March 4, 2018 23:18:00 GMT-0500` \n\n**?time zone [time zone]** - to see the current time in the specified timezone. Available timezones are `EST`, `EDT`, `CST`, `CDT`, `MST`, `MDT`, `PST`, `PDT, `UTC`, `GMT`, `EET`, `AEST`, `AEDT`"
+        var tz = "Please specify a command.\n\n**" + config.prefix + "time to [time]** - to display the time until a specified date. Your time should be in the following format:\n`March 4, 2018 23:18:00 GMT-0500` \n\n**" + config.prefix + "time zone [time zone]** - to see the current time in the specified timezone. Available timezones are `EST`, `EDT`, `CST`, `CDT`, `MST`, `MDT`, `PST`, `PDT, `UTC`, `GMT`, `EET`, `AEST`, `AEDT`"
     } else if (type === "to") {
         //---------------------------------------------------------------------------------------------------
             var now = new Date(); 

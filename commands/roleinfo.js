@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, config) => {
     var input = args.join(" ");
     if (typeof input === 'undefined') {
         msg.channel.send("Please input a valid role name").catch(console.error);
@@ -21,7 +21,7 @@ exports.run = (client, msg, args, content) => {
                 .addField("Hoisted", role.hoist, true)
                 .addField("Users", `${result}`)
                 .setTimestamp()
-                .setFooter("?rolinfo | " + msg.author.tag);					
+                .setFooter(config.prefix + "rolinfo | " + msg.author.tag);					
             msg.channel.send({embed}).catch(console.error);
         };
     };

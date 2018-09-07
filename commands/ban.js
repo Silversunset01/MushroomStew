@@ -9,7 +9,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     //} else if (banUser.roles.find("name","Moderator")) {
     //        msg.channel.send("I'm sorry but you may not ban this person");
     } else if (!banUser || !banReason) {
-        msg.channel.send("The required syntax is `!ban @user [reason]`")
+        msg.channel.send("The required syntax is `" + config.prefix + "ban @user [reason]`")
     } else {
         //log to ban-logs channel
         var embed = new Discord.RichEmbed()
