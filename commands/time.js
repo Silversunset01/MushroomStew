@@ -1,6 +1,5 @@
-const Discord = require("discord.js");  //required for embeds apparently
-const request = require('axios');       //required for API requests
-const config = require("../config.json"); //required for config.owner info
+const Discord = require("discord.js");  
+const request = require('axios');      
 
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var type = args[0];

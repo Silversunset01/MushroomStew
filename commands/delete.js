@@ -1,4 +1,4 @@
-exports.run = (client, msg, args) => {
+exports.run = (client, msg, args, config) => {
     if (msg.member.roles.find("name","Head Admin") || msg.author.id == config.owner) {
         var amt = args[0];
         if (typeof amt === 'undefined') {

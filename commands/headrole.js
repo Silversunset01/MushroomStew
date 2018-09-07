@@ -1,4 +1,4 @@
-exports.run = (client, msg, args, content, Discord) => {
+exports.run = (client, msg, args, content, Discord, config) => {
     if (msg.member.roles.find("name","Head Admin")) {
         var user = msg.mentions.members.first();                //mentioned user
         var rolereq = args.slice(1, args.length);

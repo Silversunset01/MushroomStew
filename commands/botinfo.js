@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-exports.run = (client, msg) => {
+exports.run = (client, msg, config) => {
     //store bot's game type
     var game = client.user.presence.game.type;
         switch(game) {
