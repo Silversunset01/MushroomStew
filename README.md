@@ -102,3 +102,4 @@ Your server must be running NODE.JS and will need some form of autorun script. F
 * `#logs`
 * `#nickname-logs`
 * `#ban-logs`
+* `#restart-logs`
