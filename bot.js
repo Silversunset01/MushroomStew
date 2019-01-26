@@ -18,6 +18,17 @@ fs.readdir("./events/", (err, files) => {
   });
 });
 
+client.on("error", (e) => {
+  console.error(e);
+  client.channels.find(c => c.name == config.errorLogs).send("**Error:** ```" + e + "```");
+}
+);
+client.on("warn", (e) => {
+console.warn(e);
+client.channels.find(c => c.name == config.errorLogs).send("**Warning:** ```" + e + "```");
+}
+);
+
 client.on("message", msg => {
   if (msg.author.bot) return;
   if (msg.content.indexOf(config.prefix) !== 0) return;

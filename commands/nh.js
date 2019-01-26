@@ -34,7 +34,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
                         .setURL("http://namemc.com/u/" + userid)
                         .setColor(0xC7BFE8)
                         .setTimestamp()
-                        .setFooter("?nh | " + msg.author.tag)
+                        .setFooter(config.prefix + "nh | " + msg.author.tag)
                         .setDescription(nameChanges);
                     msg.channel.send({embed}).catch(console.error);
                 }).catch(err => {console.log(err)})

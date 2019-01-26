@@ -1,10 +1,10 @@
-exports.run = (client, msg, args, content, Discord) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var req = args.join(" ");
-    var staff = ["Head Admin", "Tech Admin", "PAdmin", "CAdmin", "Moderator", "Past Staff", "Nerdbot"];
-    var role = msg.guild.roles.find("name", req);
-    var hasRole = msg.member.roles.find("name", req);
+    var staff = config.specialRoles;
+    var role = msg.guild.roles.find(r => r.name == req);
+    var hasRole = msg.member.roles.find(r => r.name == req);
     if (!role) {
-        msg.channel.send("I am sorry but that role does not exist. Please do **?rolelist** for a list of available roles.").catch(console.error); return;
+        msg.channel.send("I am sorry but that role does not exist. Please do **" + config.prefix + "rolelist** for a list of available roles.").catch(console.error); return;
     } else {
         if (!hasRole){
             if (staff.includes(req) === true) {
@@ -24,7 +24,6 @@ exports.run = (client, msg, args, content, Discord) => {
     };
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "role",
     category: "Roles",

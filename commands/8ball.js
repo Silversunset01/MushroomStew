@@ -1,4 +1,4 @@
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var q = args[0];
     if (typeof q === 'undefined') {
         msg.channel.send("I would answer, but you did not ask a question!").catch(console.error);; 

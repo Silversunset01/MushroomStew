@@ -1,4 +1,4 @@
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var temp = args[0];
     var newtemp = Math.round((temp - 32) / 1.8);
     if (typeof temp === 'undefined') {

@@ -1,5 +1,5 @@
-exports.run = (client, msg, args, config) => {
-    if (msg.member.roles.find("name","Head Admin") || msg.author.id == config.owner) {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
+    if (msg.member.roles.find(r => r.name == config.headRole) || msg.author.id == config.owner) {
         var amt = args[0];
         if (typeof amt === 'undefined') {
             msg.channel.send("You need to provide an amount to delete!").catch(console.error);;

@@ -1,13 +1,10 @@
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
-    //variables
     var banUser = msg.mentions.users.first();
     var banReason = args.splice(1, args.length - 1).join(" ");
     var banTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York", timeZoneName: "short", weekday: "short", month: "long", day: "2-digit", year: "numeric", hour: '2-digit', minute:'2-digit'});
     
-    if (!msg.member.roles.find("name","Moderator")) {
+    if (!msg.member.roles.find(r => r.name == config.modRole)) {
         msg.channel.send("I'm sorry, you do not have permission for this command").catch(console.error);
-    //} else if (banUser.roles.find("name","Moderator")) {
-    //        msg.channel.send("I'm sorry but you may not ban this person");
     } else if (!banUser || !banReason) {
         msg.channel.send("The required syntax is `" + config.prefix + "ban @user [reason]`")
     } else {
@@ -22,9 +19,8 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 **Reason:** ${banReason}
 **When:** ${banTime}
             `);
-            msg.guild.channels.find("name","ban-logs").send({embed}).catch(console.error);
-        //msg.guild.channels.find("name","ban-logs").send(`🔨 **${banUser.tag}** has been banned 🔨\n**User Id:** ${banUser.id}\n**Banned By:** ${msg.author.tag}\n**Reason:** ${banReason}\n**When:** ${banTime}`).catch(console.error);
-
+            msg.guild.channels.find(c => c.name == config.banLogs).send({embed}).catch(console.error);
+        
         //ban mentioned user
         msg.guild.ban(banUser)
         .then(user => console.log("Banned " + user.username + " from " + msg.guild.name))
@@ -32,7 +28,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     };
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "ban",
     category: "Mods",

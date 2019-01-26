@@ -40,7 +40,6 @@ __Misc__
     
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "serverinfo",
     category: "Info",

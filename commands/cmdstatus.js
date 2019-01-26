@@ -1,6 +1,6 @@
 const fs = require("fs");
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
-    if (!msg.member.roles.find("name","Head Admin")) {
+    if (!msg.member.roles.find(r => r.name == config.headRole)) {
         msg.channel.send("You do not have permission to run this command.").catch(console.error);;
     } else {
         var req = args[0];
@@ -29,7 +29,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
                 .setColor(0xE8DFEA)
                 .setTimestamp()
                 .setFooter(config.prefix + "cmdstatus | " + msg.author.tag)
-                .setDescription(`For a list of commands type **?cmdstatus [stauts]**. \nThe categories available are: \n${result}`);
+                .setDescription(`For a list of commands type **${config.prefix}cmdstatus [stauts]**. \nThe categories available are: \n${result}`);
                 msg.channel.send({embed}).catch(console.error);
         } else {
             //if category is listed, display all commands within

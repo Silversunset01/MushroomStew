@@ -1,6 +1,6 @@
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var req = args[0];
-    if (!msg.member.roles.find("name","Head Admin")) {
+    if (!msg.member.roles.find(r => r.name == config.headRole)) {
         msg.channel.send("You do not have permission for this command").catch(console.error);
     } else  if (!args[0]){
         msg.channel.send("The sytax for this command is\n " + config.prefix + "botgame [playing | listening | watching] [text]`")
@@ -13,7 +13,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
             case "watching": var gtype = "Watching"; break;
             default: msg.channel.send("Please input a valid type: playing | listening to | watching").catch(console.error); break;
         };
-        //client.user.setActivity("you sleep", {type: 'WATCHING'})
+
         client.user.setActivity(activity, {type: acType.toUpperCase()})
         .then(presence => console.log(`Activity set to ${client.user.presence.game.type}`))
         .catch(console.error);

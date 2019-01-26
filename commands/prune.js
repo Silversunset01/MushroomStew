@@ -1,5 +1,5 @@
-exports.run = (client, msg, args) => {
-    if (msg.member.roles.find("name","Moderator")) {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
+    if (msg.member.roles.find(r => r.name == config.modRole)) {
         var usr = msg.mentions.users.first();
         var amt = args[1];
         if (typeof amt === 'undefined' || !usr) {

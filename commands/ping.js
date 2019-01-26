@@ -1,4 +1,4 @@
-exports.run = (client, msg, args) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     msg.channel.send("pong!").catch(console.error);
 }
 

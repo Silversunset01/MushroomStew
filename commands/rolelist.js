@@ -1,7 +1,6 @@
-const Discord = require("discord.js");  //required for embeds apparently
-exports.run = (client, msg, args, content, config) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var roles = msg.guild.roles.map(r=>r.name).sort();
-    var rmroles = ["Head Admin", "CAdmin", "PAdmin", "Tech Admin", "Moderator", "Nerdbot", "Past Staff", "Nerds", "@everyone"];
+    var rmroles = config.specialRoles;
     for (i in rmroles) {
         var ct = roles.indexOf(rmroles[i]);
         roles.splice(ct, 1)
@@ -18,8 +17,6 @@ exports.run = (client, msg, args, content, config) => {
     
 };
 
-
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "rolelist",
     category: "Roles",

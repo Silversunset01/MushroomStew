@@ -1,6 +1,3 @@
-const Discord = require("discord.js");  
-const request = require('axios');      
-
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var type = args[0];
     var timeck = args[1];
@@ -14,7 +11,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     if (!type) {
         var tz = "Please specify a command.\n\n**" + config.prefix + "time to [time]** - to display the time until a specified date. Your time should be in the following format:\n`March 4, 2018 23:18:00 GMT-0500` \n\n**" + config.prefix + "time zone [time zone]** - to see the current time in the specified timezone. Available timezones are `EST`, `EDT`, `CST`, `CDT`, `MST`, `MDT`, `PST`, `PDT, `UTC`, `GMT`, `EET`, `AEST`, `AEDT`"
     } else if (type === "to") {
-        //---------------------------------------------------------------------------------------------------
             var now = new Date(); 
             var then = new Date(time); 
             var then_UTC = Date.UTC(then.getUTCFullYear(), then.getUTCMonth(), then.getUTCDate(),  then.getUTCHours(), then.getUTCMinutes(), then.getUTCSeconds()); 
@@ -30,7 +26,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
                 
                 var tz = "**Time Remaining**\n" + days + " days " + hours + " hours " + minutes + " minutes ";
             }          
-        //---------------------------------------------------------------------------------------------------
     } else if (type === "zone") {
         switch (time.toUpperCase()) {
             case "EST": 
@@ -54,11 +49,10 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "time",
     category: "Math",
-    description: "Displays various time related commands. `?time zone` - displays the current time in the timezone specified. `?time to [time]`- displays the time until the date/time specified",
+    description: "Displays various time related commands. `time zone` - displays the current time in the timezone specified. `time to [time]`- displays the time until the date/time specified",
     usage: "time [type]",
     example: "",
     status: "Ready"

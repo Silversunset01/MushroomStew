@@ -17,7 +17,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
             .setColor(0x008000)
             .setTimestamp()
             .setThumbnail(msg.author.avatarURL)
-            .setFooter("?myinfo")
+            .setFooter(config.prefix + "myinfo")
             .addField("**User Info**",`
 **Tag: ** ${msg.author.tag}
 **Nickname: ** ${msg.member.displayName}
@@ -32,7 +32,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
             .addField("**Roles**", answer);
         msg.channel.send({embed}).catch(console.error);
     } else {
-        var UsrLookup = msg.guild.members.find("id",Input);
+        var UsrLookup = msg.guild.members.find(m => m.id == Input);
         var roles = UsrLookup.roles.array();
         var len = roles.length;
         var amt = 20;
@@ -64,7 +64,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     }
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "myinfo",
     category: "Info",

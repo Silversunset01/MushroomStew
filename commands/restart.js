@@ -1,5 +1,5 @@
-exports.run = (client, msg, args, content) => {
-    if (!msg.member.roles.find("name","Head Admin")) {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
+    if (!msg.member.roles.find(r => r.name == config.headRole)) {
         msg.channel.send("You do not have permission to run this command").catch(console.error);
     } else {
         console.log("Stopping the bot");

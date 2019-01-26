@@ -1,5 +1,5 @@
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
-  if (!msg.member.roles.find("name","Head Admin")) {
+  if (!msg.member.roles.find(r => r.name == config.headRole)) {
     msg.channel.send("You do not have permission to run this command").catch(console.error);
   } else if(typeof args[0] === 'undefined') {
     msg.channel.send("You must provide a command name to reload. `!reload <cmd>`").catch(console.error);
@@ -13,7 +13,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 exports.help = {
   name: "reload",
   category: "HeadAdmins",
-  description: "Reloads the bots command to allow edits to take effect. Currently this is restricted to the owner of the bot",
+  description: "Reloads the bots command to allow edits to take effect.",
   usage: "reload [command]",
   example: "",
   status: "Ready"

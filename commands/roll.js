@@ -1,4 +1,4 @@
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var num = args[0];
     if (isNaN(parseInt(num)) || num < 1 || num > 10000) {
         msg.channel.send("You must enter a number between 1 and 10,000").catch(console.error);
@@ -8,7 +8,6 @@ exports.run = (client, msg, args, content) => {
     }; 
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "roll",
     category: "Fun",

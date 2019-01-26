@@ -1,10 +1,10 @@
-exports.run = (client, msg, args, content, Discord, config) => {
-    if (msg.member.roles.find("name","Head Admin")) {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
+    if (msg.member.roles.find(r => r.name == config.headRole)) {
         var user = msg.mentions.members.first();                //mentioned user
         var rolereq = args.slice(1, args.length);
         var req = rolereq.join(" ");
-        var role = msg.guild.roles.find("name", req);       //find role by name
-        var hasRole = user.roles.find("name", req);   //check if user has the role or not
+        var role = msg.guild.roles.find(r => r.name == req);       //find role by name
+        var hasRole = user.roles.find(r => r.name == req);   //check if user has the role or not
         //console.log(`${role} ----> ${user}`);
 
         if (!role) {
@@ -23,7 +23,6 @@ exports.run = (client, msg, args, content, Discord, config) => {
         }
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "headrole",
     category: "HeadAdmins",

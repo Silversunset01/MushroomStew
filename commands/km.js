@@ -1,4 +1,4 @@
-exports.run = (client, msg, args, content) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var miles = args[0];
     if (typeof miles === 'undefined') {
         msg.channel.send("Please input a distance to convert!").catch(console.error);

@@ -1,10 +1,9 @@
-const Discord = require("discord.js");
-exports.run = (client, msg, args, content, config) => {
+exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
     var input = args.join(" ");
     if (typeof input === 'undefined') {
         msg.channel.send("Please input a valid role name").catch(console.error);
     } else {
-        var role = msg.guild.roles.find("name", input);
+        var role = msg.guild.roles.find(r => r.name == input);
         if (role === null) {
             msg.channel.send("Please input a valid role name").catch(console.error);
         } else {

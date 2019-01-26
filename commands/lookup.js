@@ -1,5 +1,5 @@
 exports.run = (client, msg, args, content, cooldown, command, Discord, config, request) => {
-    if (msg.member.roles.find("name", "Moderator")) {
+    if (msg.member.roles.find(r => r.name == config.modRole)) {
         var usr = args[0];
         if (typeof usr === 'undefined') {
             msg.channel.send("You must enter a username").catch(console.error);
@@ -13,7 +13,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
                         .setURL("http://mcbouncer.com/u/" + userid)
                         .setColor(0xC7BFE8)
                         .setTimestamp()
-                        .setFooter("?lookup | " + msg.author.tag)
+                        .setFooter(config.prefix + "lookup | " + msg.author.tag)
                     request.get('https://mcbouncer.com/api/v2/bans/?server=c.nerd.nu&user_id=' + userid)
                     .then(res => {
                         for (i in res.data.data) {

@@ -4,10 +4,10 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     var unbanReason = args.splice(1, args.length - 1).join(" ");
     var unbanTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York", timeZoneName: "short", weekday: "short", month: "long", day: "2-digit", year: "numeric", hour: '2-digit', minute:'2-digit'});
     
-    if (!msg.member.roles.find("name","Moderator")) {
+    if (!msg.member.roles.find(r => r.name == config.modRole)) {
         msg.channel.send("I'm sorry, you do not have permission for this command").catch(console.error);
     } else if (!unbanUser || !unbanReason) {
-        msg.channel.send("The required syntax is `?unban @user [reason]`")
+        msg.channel.send("The required syntax is `" + config.prefix + "unban @user [reason]`")
     } else {
         //log to ban-logs channel
         var embed = new Discord.RichEmbed()
@@ -20,7 +20,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 **Reason:** ${unbanReason}
 **When:** ${unbanTime}
             `);
-        msg.guild.channels.find("name","ban-logs").send({embed}).catch(console.error);
+        msg.guild.channels.find(c => c.name == config.banLogs).send({embed}).catch(console.error);
 
         //ban mentioned user
         msg.guild.unban(unbanUser)
@@ -29,7 +29,6 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     };
 };
 
-//for !help command (mandatory or the bot will error!)
 exports.help = {
     name: "unban",
     category: "Mods",

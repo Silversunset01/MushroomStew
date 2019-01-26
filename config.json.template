@@ -1,6 +1,17 @@
 {
-	"token": "SEKRIT TOKEN",
-	"prefix": "?",
-    "owner": "OWNER ID",
-    "staff": ["Head Admin", "Tech Admin", "PAdmin", "CAdmin", "Moderator", "Past Staff", "Justice"]
+	"token": "INSERT TOKEN HERE",
+	"prefix": ".",
+    "owner": "OWNER ID HERE",
+    "specialRoles": ["Head Admin", "CAdmin", "PAdmin", "Tech Admin", "Moderator", "Justice", "Past Staff", "Nerds", "@everyone"],
+    "defaultRole": "Nerds", 
+    "modRole": "Moderator",
+    "headRole": "Head Admin",
+    "censoredWords": ["nigga", "nigger"],
+    "joinLogs": "join-logs",
+    "banLogs": "ban-logs",
+    "deleteLogs": "deletion-logs",
+    "nickLogs": "nickname-logs",
+    "errorLogs": "logs",
+    "restartLogs": "logs",
+    "logs": "logs"
 }

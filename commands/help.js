@@ -26,11 +26,11 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
             .setColor(0xE8DFEA)
             .setTimestamp()
             .setFooter(config.prefix + "help | " + msg.author.tag)
-            .setDescription(`For a list of commands type **?help [category]**. \nThe categories available are: \n${result}`);
+            .setDescription(`For a list of commands type **${config.prefix}help [category]**. \nThe categories available are: \n${result}`);
             msg.channel.send({embed}).catch(console.error);
     } else {
         //if category is listed, display all commands within
-        if ((req.toLowerCase() === "owner" && msg.author.id !== config.owner) || (req.toLowerCase() === 'mods' && !msg.member.roles.find("name","Moderator")) || (req.toLowerCase() === 'headadmins' && !msg.member.roles.find("name","Head Admin")) ) {
+        if ((req.toLowerCase() === "owner" && msg.author.id !== config.owner) || (req.toLowerCase() === 'mods' && !msg.member.roles.find(r => r.name == config.modRole)) || (req.toLowerCase() === 'headadmins' && !msg.member.roles.find(r => r.name == config.headRole)) ) {
             msg.channel.send("I'm sorry, you do not have permission for this command.").catch(console.error);
         } else {
             //create embed
