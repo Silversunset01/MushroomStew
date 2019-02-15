@@ -2,7 +2,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
     var id = args[0];
     var cd = 60;
     if (cooldown.has(command)) {
-        msg.channel.send(`I'm sorry, the ${config.prefix}${command} command has a cooldown of ${cd}s`);
+        msg.channel.send(`I'm sorry, the **${config.prefix}${command}** command has a cooldown of **${cd}s**`);
     } else {
         cooldown.add(command);
         setTimeout(() => {

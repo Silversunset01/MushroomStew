@@ -30,7 +30,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
             msg.channel.send({embed}).catch(console.error);
     } else {
         //if category is listed, display all commands within
-        if ((req.toLowerCase() === "owner" && msg.author.id !== config.owner) || (req.toLowerCase() === 'mods' && !msg.member.roles.find(r => r.name == config.modRole)) || (req.toLowerCase() === 'headadmins' && !msg.member.roles.find(r => r.name == config.headRole)) ) {
+        if ((req.toLowerCase() === "owner" && msg.author.id !== config.owner) || (req.toLowerCase() === 'mods' && !msg.member.roles.find(r => r.name == config.modRole)) || (req.toLowerCase() === 'admins' && !msg.member.roles.find(r => r.name == config.headRole)) ) {
             msg.channel.send("I'm sorry, you do not have permission for this command.").catch(console.error);
         } else {
             //create embed

@@ -54,7 +54,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
     name: "cmdstatus",
-    category: "HeadAdmins",
+    category: "Admins",
     description: "Displays all commands and their status.",
     usage: "cmdstatus",
     example: "",

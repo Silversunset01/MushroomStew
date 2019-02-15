@@ -4,7 +4,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
     name: "ts",
-    category: "HeadAdmins",
+    category: "Admins",
     description: "Test Command..for testing",
     usage: "ts",
     example: "",

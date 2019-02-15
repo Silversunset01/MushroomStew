@@ -9,7 +9,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
     name: "restart",
-    category: "HeadAdmins",
+    category: "Admins",
     description: "Restarts the bot (provided the auto-run script hasn't crashed). Currently this is restricted to the owner of the bot.",
     usage: "restart",
     example: "",    

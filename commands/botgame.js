@@ -23,7 +23,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
     name: "botgame",
-    category: "HeadAdmins",
+    category: "Admins",
     description: "Allows you to change the bots game: `!botgame [playing | listening | watching [text]`.",
     usage: "botgame [type] [arguments]",
     example: "",

@@ -10,6 +10,7 @@
     "joinLogs": "join-logs",
     "banLogs": "ban-logs",
     "deleteLogs": "deletion-logs",
+    "editLogs": "deletion-logs",
     "nickLogs": "nickname-logs",
     "errorLogs": "logs",
     "restartLogs": "logs",

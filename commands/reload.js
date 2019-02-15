@@ -12,7 +12,7 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
   name: "reload",
-  category: "HeadAdmins",
+  category: "Admins",
   description: "Reloads the bots command to allow edits to take effect.",
   usage: "reload [command]",
   example: "",

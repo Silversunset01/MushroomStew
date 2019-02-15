@@ -20,10 +20,10 @@ Mumble Connection: server: mumble.nerd.nu | port: 6162 (voice chat)
 };
 
 exports.help = {
-    name: "nerdnu",
+    name: "nerd",
     category: "Info",
     description: "Displays various links & information for the Nerd.nu Gaming Community.",
-    usage: "nerdnu",
+    usage: "nerd",
     example: "",
     status: "Ready"
 };

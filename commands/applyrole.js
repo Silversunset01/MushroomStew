@@ -24,10 +24,10 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 };
 
 exports.help = {
-    name: "headrole",
-    category: "HeadAdmins",
-    description: "Allows head admins to apply roles to users.",
-    usage: "headrole @username [rolename]",
+    name: "applyrole",
+    category: "Admins",
+    description: "Allows admins to apply roles to users.",
+    usage: "applyrole @username [rolename]",
     example: "",
     status: "Ready"
 };

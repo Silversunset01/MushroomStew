@@ -12,8 +12,8 @@ exports.run = (client, msg, args, content, cooldown, command, Discord, config, r
 
 exports.help = {
     name: "delete",
-    category: "HeadAdmins",
-    description: "Deletes messages from a channel. Currently restricted to the Head Admin role & bot owner for testing reasons, and requires the bot to have the 'Manage Messages' permission.",
+    category: "Admins",
+    description: "Deletes messages from a channel. Currently restricted to the Admin role & bot owner for testing reasons, and requires the bot to have the 'Manage Messages' permission.",
     usage: "delete [#]",
     example: "",
     status: "Ready"

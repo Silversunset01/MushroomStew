@@ -9,5 +9,5 @@ exports.run = (client, message) => {
         .setTimestamp()
         .setTitle(`🗑 **Message Deleted** 🗑`)
         .setDescription(`**Nickname:** ${message.member.displayName}\n**Tag:** ${message.author.tag}\n**From Channel:** ${message.channel.name}\n**Content:** ${text}`);
-    client.guilds.find("id",guild).channels.find(c => c.name == config.deleteLogs).send({embed}).catch(console.error);
+    client.guilds.find(i => i.id == guild).channels.find(c => c.name == config.deleteLogs).send({embed}).catch(console.error);
 };
