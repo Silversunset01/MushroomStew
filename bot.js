@@ -20,12 +20,12 @@ fs.readdir("./events/", (err, files) => {
 
 client.on("error", (e) => {
   console.error(e);
-  client.channels.find(c => c.name == config.errorLogs).send("**Error:** ```" + e + "```");
+  client.channels.find(c => c.name == config.errorLogs).send("**Error:** ```" + e.message + "```");
 }
 );
 client.on("warn", (e) => {
 console.warn(e);
-client.channels.find(c => c.name == config.errorLogs).send("**Warning:** ```" + e + "```");
+client.channels.find(c => c.name == config.errorLogs).send("**Warning:** ```" + e.message + "```");
 }
 );
 

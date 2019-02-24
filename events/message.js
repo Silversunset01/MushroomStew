@@ -8,7 +8,7 @@ exports.run = (client, message) => {
     };
     //chat censoring
     var censorList = config.censoredWords;
-    var myMsg = message.content;
+    var myMsg = message.content.toLowerCase();
     for (c in censorList) {
         if (myMsg.includes(censorList[c])){
             message.delete().catch(console.error);
